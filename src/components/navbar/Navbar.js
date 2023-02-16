@@ -4,7 +4,7 @@ import "./index.css"
 
 function Navbar() {
   const [categories, setCategories] = useState([]);
-  const [news, setNews] = useState([]);
+  const [setNews] = useState([]);
   const [category, setCategory] = useState('general');
   const [pageSize, setPageSize] = useState(20);
   const [page, setPage] = useState(1);

@@ -9,7 +9,7 @@ import axios from "axios";
 export default function Carousel({ category }) {
   const [sliderRef, setSliderRef] = useState(null);
   const [news, setNews] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage] = useState(1);
   const [postsPerPage] = useState(3);
 
   const sliderSettings = {

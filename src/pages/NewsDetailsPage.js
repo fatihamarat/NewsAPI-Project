@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import Layout from '../components/Layout';
-import { getCategoryNews } from './api';
+import { getCategoryNews, getSearchFilterNews,getCountryFilterNews } from './api';
 import "./NewsDetailsPage.css"
 
 function NewsDetailsPage({category}) {
@@ -18,6 +18,7 @@ function NewsDetailsPage({category}) {
   useEffect(() => {
     getData();    
   }, [getData]);
+
 
 
   const handleCountryChange = useCallback((e) => {
