@@ -1,0 +1,67 @@
+#cv{
+    margin: 30px;
+    width: 1000px;
+    height: auto;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+#first{
+    margin:0;
+    padding-top: 20px;
+    box-sizing: border-box;
+    background: whitesmoke;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+}
+#first .name{
+    align-self: center;
+}
+#first .job{
+    align-self: center;
+}
+#second{
+    display: flex;
+    width: 100%;
+    height: auto;
+    background: whitesmoke;
+    
+}
+#second .left{
+    margin:0;
+    padding-top: 10px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+}
+h5{
+    color: red;
+}
+#second .right{
+    margin:0;
+    padding-top: 10px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-bottom: 1px solid black;
+}
+#parag{
+    margin: 0;
+    padding-left: 20px;
+    height: auto;
+    width: 100%;
+    background: whitesmoke;
+    border-bottom: 1px solid black;
+}
