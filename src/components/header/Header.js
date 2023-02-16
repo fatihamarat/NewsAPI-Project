@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import "./index.css"
 import Navbar from '../navbar/Navbar';
-import { getSearchFilterNews } from '../../pages/api';
+import { getCategoryNews } from '../../pages/api';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -12,7 +12,7 @@ const [search, setSearch] = useState("");
 
 const handleSearchChange = useCallback(async (e) => {
   setSearch(e.target.value);
-  const search = await getSearchFilterNews(e.target.value, "20", "1");
+  const search = await getCategoryNews(e.target.value, "20", "1");
   setData(search?.data?.articles || []);
 }, [setData]);
 

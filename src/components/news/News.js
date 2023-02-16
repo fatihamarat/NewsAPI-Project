@@ -10,7 +10,7 @@ const News = ({ category }) => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `https://newsapi.org/v2/top-headlines?country=tr&apiKey=1ce5b3fab6cc45caaada5f5e9af206bc`
+        `https://newsapi.org/v2/top-headlines?country=tr&apiKey=${process.env.REACT_APP_API_KEY}`
       );
       setNews(result.data.articles);
     };
