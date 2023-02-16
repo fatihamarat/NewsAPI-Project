@@ -8,7 +8,7 @@ import NewsDetailsPage from './pages/NewsDetailsPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='https://fatihamarat.github.io/NewsAPI-Project'>
       <Routes>
         <Route path="/" exact element={<Home/>} />
         <Route path="/about" exact element={<About/>} />
