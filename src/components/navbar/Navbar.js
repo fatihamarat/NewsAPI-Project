@@ -13,7 +13,7 @@ function Navbar() {
   const {pathname} = location;
 
   useEffect(() => {
-    fetch('https://newsapi.org/v2/top-headlines/sources?apiKey=676f017549224f488970f1835f9db971')
+    fetch('https://newsapi.org/v2/top-headlines/sources?apiKey=1ce5b3fab6cc45caaada5f5e9af206bc')
       .then(response => response.json())
       .then(data => {
         const availableCategories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];

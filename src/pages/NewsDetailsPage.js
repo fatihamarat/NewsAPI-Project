@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import Layout from '../components/Layout';
-import { getCategoryNews, getSearchFilterNews,getCountryFilterNews } from './api';
+import { getCategoryNews, getSearchFilterNews, getCountryFilterNews } from './api';
 import "./NewsDetailsPage.css"
 
 function NewsDetailsPage({category}) {
@@ -11,29 +11,34 @@ function NewsDetailsPage({category}) {
 
 
   const getData = useCallback(async () => {
-    const resp = await getCategoryNews(category || "business","20","1", country, searchTerm);
+    const resp = await getCategoryNews(category || "business","20","1");
     setData(resp?.data?.articles || []);
-  },[category, country, searchTerm]);
+  },[category]);
 
   useEffect(() => {
     getData();    
   }, [getData]);
 
 
-
-  const handleCountryChange = useCallback((e) => {
+  const handleCountryChange = useCallback(async (e) => {
     setCountry(e.target.value);
+    const count = await getCountryFilterNews(e.target.value, "20", "1");
+    setData(count?.data?.articles || []);
   }, []);
 
-  const handleCategoryChange = useCallback((e) => {
+  const handleCategoryChange = useCallback(async (e) => {
     setCategoryFilter(e.target.value);
+    const cat = await getCategoryNews(e.target.value, "20", "1");
+    setData(cat?.data?.articles || []);
   }, []);
 
-  const handleSearchTermChange = useCallback((e) => {
+  const handleSearchTermChange = useCallback(async (e) => {
     setSearchTerm(e.target.value);
+    const search = await getSearchFilterNews(e.target.value, "20", "1");
+    setData(search?.data?.articles || []);
   }, []);
 
-  const handleFilterButtonClick = useCallback(() => {
+  const handleFilterButtonClick = useCallback( () => {
     getData();
   }, [getData]);
 
