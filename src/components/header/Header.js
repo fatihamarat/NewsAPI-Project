@@ -1,21 +1,7 @@
-import React, { useState, useCallback } from 'react'
 import "./index.css"
 import Navbar from '../navbar/Navbar';
-import { getCategoryNews } from '../../pages/api';
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Header() {
-
-const [setData] = useState([]);  
-const [search, setSearch] = useState("");
-
-const handleSearchChange = useCallback(async (e) => {
-  setSearch(e.target.value);
-  const search = await getCategoryNews(e.target.value, "20", "1");
-  setData(search?.data?.articles || []);
-}, [setData]);
-
   return (
     <>
       <header className="header">
@@ -24,11 +10,7 @@ const handleSearchChange = useCallback(async (e) => {
         </div>
         <div className="header-right">
           <form>
-            <input type="text" value={search} onChange={handleSearchChange} placeholder="Ara..." />
-            <button className="header-search-button">
-              <i className="fa fa-search"></i>
-              {/* <FontAwesomeIcon icon="fa-solid fa-magnifying-glass"/> */}
-            </button>
+            <input type="text" placeholder="Ara..." />
           </form>
         </div>
       </header>

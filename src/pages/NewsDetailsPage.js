@@ -22,29 +22,6 @@ function NewsDetailsPage({ category }) {
     getData();
   }, [getData]);
 
-
-  // const handleCountryChange = useCallback(async (e) => {
-  //   setCountry(e.target.value);
-  //   const count = await getCountryFilterNews(e.target.value, "20", "1");
-  //   setData(count?.data?.articles || []);
-  // }, []);
-
-  // const handleCategoryChange = useCallback(async (e) => {
-  //   setCategoryFilter(e.target.value);
-  //   const cat = await getCategoryNews({ cat: e.target.value, pageSize: "20", page: "1" });
-  //   setData(cat?.data?.articles || []);
-  // }, []);
-
-  // const handleSearchFilterChange = useCallback(async (e) => {
-  //   setSearchFilter(e.target.value);
-  //   const search = await getSearchFilterNews(e.target.value, "20", "1");
-  //   setData(search?.data?.articles || []);
-  // }, []);
-
-  const handleFilterButtonClick = useCallback(() => {
-    getData();
-  }, [getData]);
-
   return (
     <Layout>
       <div className="newsDetails-container">
@@ -75,7 +52,6 @@ function NewsDetailsPage({ category }) {
             <label>Arama:</label>
             <input type="text" value={searchFilter} onChange={(e) => setSearchFilter(e.target.value)} placeholder="Haber Ara" />
           </div>
-          <button onClick={handleFilterButtonClick}>Filtrele</button>
         </div>
         <div className="newsDetails-content">
           {data?.length ?
