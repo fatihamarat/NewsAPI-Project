@@ -4,7 +4,7 @@ import "./index.css"
 
 function Navbar() {
   const [categories, setCategories] = useState([]);
-  const [setNews] = useState([]);
+  // const [news, setNews] = useState([]);
   const [category, setCategory] = useState('general');
   const [pageSize, setPageSize] = useState(20);
   const [page, setPage] = useState(1);
@@ -34,12 +34,12 @@ function Navbar() {
     setPage(page);
   }, [location]);
 
-  useEffect(() => {
-    const url = `https://newsapi.org/v2/top-headlines?country=tr&category=${category}&pageSize=${pageSize}&page=${page}&apiKey=1ce5b3fab6cc45caaada5f5e9af206bc`;
-    fetch(url)
-      .then(response => response.json())
-      .then(data => setNews(data.articles));
-  }, [category, pageSize, page]);
+  // useEffect(() => {
+  //   const url = `https://newsapi.org/v2/top-headlines?country=tr&category=${category}&pageSize=${pageSize}&page=${page}&apiKey=1ce5b3fab6cc45caaada5f5e9af206bc`;
+  //   fetch(url)
+  //     .then(response => response.json())
+  //     .then(data => setNews(data.articles));
+  // }, [category, pageSize, page]);
 
   const uniqueCategories = [...new Set(categories)]; // kategorilerin tekrar etmemesi için filtreleme yapılır
   const routeFinder = r => pathname.startsWith(`/${r}`);
